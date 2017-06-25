@@ -1,7 +1,7 @@
 package com.nextyu.demo.aspect;
 
 import com.nextyu.summer.framework.annotation.Aspect;
-import com.nextyu.summer.framework.annotation.Controller;
+import com.nextyu.summer.framework.annotation.RestController;
 import com.nextyu.summer.framework.proxy.AspectProxy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,14 +9,15 @@ import org.slf4j.LoggerFactory;
 import java.lang.reflect.Method;
 
 /**
+ * 拦截 Controller 所有方法
  * created on 2017-06-23 17:26
  *
  * @author nextyu
  */
-@Aspect(Controller.class)
-public class ControllerAspect extends AspectProxy {
+@Aspect(RestController.class)
+public class RestControllerAspect extends AspectProxy {
 
-    private static Logger logger = LoggerFactory.getLogger(ControllerAspect.class);
+    private static Logger logger = LoggerFactory.getLogger(RestControllerAspect.class);
 
     private long begin;
 
